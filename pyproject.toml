@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "my_library"
+dynamic = ["version"]
+description = "Demonstrating a mypy daemon bug"
+readme = "README.rst"
+license = { text = "MIT" }
+requires-python = ">= 3.11"
+authors = [
+    { name = "Stephen Moore", email = "stephen@delfick.com" },
+]
+
+[project.urls]
+Homepage = "https://github.com/delfick/mypy-daemon-bug"
+
+[tool.hatch.version]
+path = "my_library/version.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/my_library",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 99
+select = [
+    "I",  # isort
+    "UP",  # pyupgrade
+    "RUF",
+    "F",
+]
+extend-exclude = [
+    ".DS_Store",
+    ".pytest_cache",
+    "tools/.python",
+    "tools/deps",
+    "__pycache__",
+]
