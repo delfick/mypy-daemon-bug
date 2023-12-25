@@ -13,4 +13,6 @@ with a different path, and then it says that file has no more errors.
 
 .. image:: ./errors-forgotten.png
 
+https://github.com/python/mypy/issues/16705
+
 I noticed this when trying to figure out why ``pylsp-mypy`` was being weird.
